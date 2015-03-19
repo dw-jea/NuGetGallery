@@ -60,6 +60,10 @@ IF NOT DEFINED MSBUILD_PATH (
   SET MSBUILD_PATH=%WINDIR%\Microsoft.NET\Framework\v4.0.30319\msbuild.exe
 )
 
+:: JEA
+echo Running build.cmd
+"%DEPLOYMENT_SOURCE%\build.cmd"
+
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 :: Deployment
 :: ----------
@@ -67,7 +71,6 @@ IF NOT DEFINED MSBUILD_PATH (
 echo Handling .NET Web Application deployment.
 
 :: 0. Restore NuGet packages
-echo %NUGET_EXE%
 "%NUGET_EXE%" restore "%DEPLOYMENT_SOURCE%\NuGetGallery.sln"
 IF !ERRORLEVEL! NEQ 0 goto error
 
