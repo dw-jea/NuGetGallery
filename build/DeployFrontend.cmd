@@ -68,7 +68,7 @@ echo Handling .NET Web Application deployment.
 
 :: 0. Restore NuGet packages
 echo %NUGET_EXE%
-"%NUGET_EXE%" restore "%DEPLOYMENT_SOURCE%\src\NuGetGallery\NuGetGallery.sln"
+"%NUGET_EXE%" restore "%DEPLOYMENT_SOURCE%\src\NuGetGallery\NuGetGallery.csproj"
 IF !ERRORLEVEL! NEQ 0 goto error
 
 :: 1. Build to the temporary path
