@@ -18,6 +18,7 @@ IF %ERRORLEVEL% NEQ 0 (
 :: -----
 
 setlocal enabledelayedexpansion
+set enablenugetpackagerestore=true
 
 SET ARTIFACTS=%~dp0%artifacts
 
